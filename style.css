@@ -1,6 +1,7 @@
 body{
     height: 95vh;
     width: 95;
+    color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,4 +15,18 @@ body{
 }
 h1{
     color: #FAEF61;
+}
+canvas{
+    box-shadow: rgba(0, 0, 0, .5);
+}
+.score{
+    font: 30px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.botoes{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 5px;
 }

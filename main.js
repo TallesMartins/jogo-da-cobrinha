@@ -13,8 +13,7 @@ let food = {
     x:Math.floor(Math.random() * 15 + 1) * box,
     y:Math.floor(Math.random()*15 + 1) * box
 }
-
-
+let pontos = 0
 function criarBG(){
     context.fillStyle='Lightgreen'
     context.fillRect(0,0,16*box,16*box)
@@ -81,12 +80,15 @@ function iniciarJogo(){
     if(direction == 'left'){snakeX-=box}
     if(direction == 'up'){snakeY-=box}
     if(direction == 'down'){snakeY+=box}
+
     if(snakeX != food.x || snakeY != food.y){
         snake.pop()
     }
     else{
-       food.x = Math.floor(Math.random()*15 +1)*box;
-       food.y = Math.floor(Math.random()*15+1)*box;
+        food.x = Math.floor(Math.random()*15 +1)*box;
+        food.y = Math.floor(Math.random()*15+1)*box;
+        pontos++
+        let score = document.querySelector('.score').innerHTML = `Pontos: ${pontos}`
     }
 
     let newHead={
@@ -103,7 +105,7 @@ function reiniciar(){
 }
 let jogo
 function iniciar(){
-    jogo = setInterval(iniciarJogo,100)
+    jogo = setInterval(iniciarJogo,130)
 }
 
 
